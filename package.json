@@ -1,1 +1,19 @@
-{\n  \"name\": \"telegram-music-bot\",\n  \"version\": \"1.0.0\",\n  \"description\": \"A Telegram bot that streams music.\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"start\": \"node index.js\",\n    \"test\": \"echo 'Error: no test specified' && exit 1\"\n  },\n  \"dependencies\": {\n    \"node-telegram-bot-api\": \"^0.53.0\",\n    \"axios\": \"^0.21.1\",\n    \"dotenv\": \"^8.2.0\",\n    \"ytdl-core\": \"^4.9.0\",\n    \"@discordjs/opus\": \"^0.6.0\"\n  },\n  \"devDependencies\": {\n    \"nodemon\": \"^2.0.3\"\n  }\n}
+{
+  "name": "telegram-mini-roblox",
+  "version": "1.0.0",
+  "description": "Production-ready Telegram Mini App gaming platform",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "lint": "turbo run lint"
+  },
+  "workspaces": [
+    "frontend",
+    "backend",
+    "bot"
+  ],
+  "devDependencies": {
+    "turbo": "^1.13.0"
+  }
+}
