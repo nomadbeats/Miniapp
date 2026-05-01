@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎵 Telegram Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🎵 Music Player</h1>
+            <div class="user-info"></div>
+        </header>
+
+        <!-- Now Playing -->
+        <div class="now-playing">
+            <div class="album-art">
+                <img id="albumArt" src="https://via.placeholder.com/200" alt="Album Art">
+            </div>
+            <div class="track-info">
+                <h2 id="currentTrack">Select a track</h2>
+                <p id="currentArtist">Artist name</p>
+            </div>
+        </div>
+
+        <!-- Player Controls -->
+        <div class="player-controls">
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+                <input type="range" id="progressBar" min="0" max="100" value="0">
+            </div>
+            <div class="time-display">
+                <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+            </div>
+            <div class="buttons">
+                <button id="prevBtn" class="btn">⏮️</button>
+                <button id="playBtn" class="btn play-btn">▶️</button>
+                <button id="nextBtn" class="btn">⏭️</button>
+                <button id="favoriteBtn" class="btn">🤍</button>
+            </div>
+            <div class="volume-control">
+                <label for="volumeSlider">🔊</label>
+                <input type="range" id="volumeSlider" min="0" max="100" value="70">
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="search">🔍 Search</button>
+            <button class="tab-btn" data-tab="browse">🎵 Browse</button>
+            <button class="tab-btn" data-tab="playlists">📋 Playlists</button>
+            <button class="tab-btn" data-tab="favorites">❤️ Favorites</button>
+        </div>
+
+        <!-- Tab Contents -->
+        <div class="tab-content">
+            <!-- Search Tab -->
+            <div id="search" class="tab-pane active">
+                <input type="text" id="searchInput" placeholder="Search songs, artists..." class="search-input">
+                <div id="searchResults" class="track-list"></div>
+            </div>
+
+            <!-- Browse Tab -->
+            <div id="browse" class="tab-pane">
+                <h3>All Tracks</h3>
+                <div id="allTracks" class="track-list"></div>
+            </div>
+
+            <!-- Playlists Tab -->
+            <div id="playlists" class="tab-pane">
+                <div class="playlist-actions">
+                    <input type="text" id="playlistName" placeholder="New playlist name..." class="input">
+                    <button id="createPlaylistBtn" class="btn btn-primary">+ Create Playlist</button>
+                </div>
+                <div id="playlistList" class="playlist-list"></div>
+            </div>
+
+            <!-- Favorites Tab -->
+            <div id="favorites" class="tab-pane">
+                <h3>Your Favorite Tracks</h3>
+                <div id="favoritesList" class="track-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="telegram-utils.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

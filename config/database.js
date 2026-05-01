@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const uri = 'your_mongodb_connection_string_here';
+const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/telegram-music-app';
 
 const connectDB = async () => {
     try {
